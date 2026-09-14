@@ -45,6 +45,22 @@ function wsgp_colour( string $slug ): string {
 }
 
 /**
+ * The site's background colour as [ value, name ]: surface on sites using the Weave colour names,
+ * otherwise GP's Customizer background colour (a var(--slug) reference followed to the palette),
+ * otherwise white.
+ */
+function wsgp_site_background(): array {
+	$surface = wsgp_colour( 'surface' );
+	if ( '' !== $surface ) { return array( $surface, 'surface' ); }
+	$bg = trim( (string) wsgp_gp_option( 'background_color' ) );
+	if ( preg_match( '/^var\(\s*--([A-Za-z0-9_-]+)\s*\)$/', $bg, $m ) ) {
+		$value = wsgp_colour( $m[1] );
+		return '' !== $value ? array( $value, $m[1] ) : array( '#ffffff', 'white' );
+	}
+	return '' !== $bg ? array( $bg, $bg ) : array( '#ffffff', 'white' );
+}
+
+/**
  * The seventeen Weave colour names and the job each one does, in order. From the boilerplate token
  * contract 0.2.1 (weave-blocks docs/scaffold/boilerplate-tokens.json), which weave-playbook
  * sops/40-design/weave-figma-boilerplate.md follows. New builds put these slugs in the GP palette.

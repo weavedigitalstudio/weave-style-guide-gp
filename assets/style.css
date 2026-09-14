@@ -36,7 +36,10 @@
 
 /* Logos */
 .wsg-logo-stages{display:grid;grid-template-columns:1fr 1fr}
-.wsg-logo-stage{display:flex;align-items:center;justify-content:center;gap:1rem;min-height:150px;padding:1.25rem;background:#fff}
+.wsg-logo-stages.is-single{grid-template-columns:1fr}
+.wsg-logo-stage{position:relative;display:flex;align-items:center;justify-content:center;gap:1rem;min-height:150px;padding:1.25rem 1.25rem 1.75rem;background:#fff}
+.wsg-logo-stage + .wsg-logo-stage{border-left:1px solid var(--wsg-border)}
+.wsg-stage-label{position:absolute;left:.6rem;bottom:.45rem;font-size:.6875rem;line-height:1;opacity:.7}
 .wsg-guide .wsg-logo-stage img{display:block;width:100%;max-width:220px;height:80px;object-fit:contain}
 .wsg-guide .wsg-logo-stage img.wsg-icon-img{max-width:none;border-radius:20%}
 .wsg-site-icon .wsg-logo-stages{grid-template-columns:1fr}
@@ -77,4 +80,4 @@
 #wsg-toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,1rem);background:#1a1a1a;color:#fff;padding:.5rem 1rem;border-radius:999px;font-size:.875rem;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:100000}
 #wsg-toast.is-visible{opacity:1;transform:translate(-50%,0)}
 
-@media (max-width:600px){.wsg-pairing-row{grid-template-columns:1fr;gap:.5rem}.wsg-logo-stages{grid-template-columns:1fr}}
+@media (max-width:600px){.wsg-pairing-row{grid-template-columns:1fr;gap:.5rem}.wsg-logo-stages{grid-template-columns:1fr}.wsg-logo-stage + .wsg-logo-stage{border-left:0;border-top:1px solid var(--wsg-border)}}

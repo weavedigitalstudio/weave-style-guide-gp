@@ -18,7 +18,7 @@ function wsgp_create_page( string $slug = 'style-guide', bool $refresh = false )
 	$existing = get_page_by_path( $slug );
 	if ( $existing && ! get_post_meta( $existing->ID, WSGP_PAGE_META, true ) ) {
 		/* translators: 1: page slug, 2: page ID */
-		return new WP_Error( 'wsgp_slug_taken', sprintf( __( 'A page at /%1$s/ already exists (ID %2$d) and was not made by this plugin. Pick another slug.', 'weave-style-guide-gp' ), $slug, $existing->ID ) );
+		return new WP_Error( 'wsgp_slug_taken', sprintf( __( 'A page at /%1$s/ already exists (ID %2$d) and was not made by this plugin. Pick another slug.', 'weave-style-guide-gp' ), $slug, $existing->ID ), array( 'page_id' => $existing->ID ) );
 	}
 	$args = array( 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => __( 'Style guide', 'weave-style-guide-gp' ), 'post_name' => $slug, 'post_content' => wsgp_page_content() );
 	if ( $existing ) {
