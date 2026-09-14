@@ -1,0 +1,80 @@
+/* Weave Style Guide for GeneratePress. Chrome takes the site's Weave colour names (GP writes them as --border, --text and so on) and falls back to neutrals on older sites. */
+.wsg-guide{--wsg-border:var(--border,#d9d9d9);--wsg-muted:var(--text-muted,#595959);--wsg-surface:var(--surface,#fff);--wsg-subtle:var(--surface-subtle,#f5f5f5);--wsg-ink:var(--text,#1a1a1a);--wsg-ok:var(--success,#2a7a4b);--wsg-radius:8px;--wsg-small:.8125rem}
+.wsg-guide .wsg-intro{font-size:1rem;color:var(--wsg-muted);margin:0 0 1rem}
+.wsg-job{margin:.2rem .75rem 0;font-size:var(--wsg-small);color:var(--wsg-muted)}
+.wsg-pair-sample{font-size:1rem;padding:.5rem .8rem}
+.wsg-guide figure{margin:0}
+.wsg-guide .wsg-title{margin:0 0 .75rem}
+.wsg-guide .wsg-meta code{font-size:inherit;background:var(--wsg-subtle);padding:0 .3em;border-radius:3px}
+.wsg{margin-block:1.5rem 4rem}
+.wsg-guide .wsg-h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:4.5rem 0 1.25rem}
+.wsg-guide .wsg-h3{font-size:clamp(1.3rem,2.5vw,1.6rem);line-height:1.2;margin:2.5rem 0 .75rem}
+.wsg-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+.wsg-grid-logos{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
+.wsg-grid-families{grid-template-columns:1fr}
+.wsg-grid-icons{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+.wsg-card{border:1px solid var(--wsg-border);border-radius:var(--wsg-radius);overflow:hidden;background:var(--wsg-surface);color:var(--wsg-ink)}
+.wsg-guide .wsg-meta,.wsg-guide .wsg-small{font-size:var(--wsg-small);color:var(--wsg-muted)}
+.wsg-guide .wsg-meta{margin:0 0 1rem}
+.wsg-name{font-weight:600;color:var(--wsg-ink)}
+.wsg-guide .wsg-note{padding:1rem 1.25rem;border-left:4px solid var(--wsg-border);background:var(--wsg-subtle);color:var(--wsg-ink)}
+
+/* Copy buttons: reset GP's button colours and typography */
+.wsg-guide .wsg-copy{appearance:none;display:inline-block;margin:0;background:var(--wsg-subtle);color:var(--wsg-ink);border:1px solid var(--wsg-border);border-radius:6px;padding:.25rem .5rem;font:inherit;font-size:var(--wsg-small);font-weight:400;line-height:1.4;letter-spacing:normal;text-transform:none;text-decoration:none;text-align:left;cursor:pointer}
+.wsg-guide .wsg-copy:hover,.wsg-guide .wsg-copy:focus-visible{background:var(--wsg-subtle);color:var(--wsg-ink);border-color:currentColor}
+.wsg-guide .wsg-copy code{font-size:inherit;background:none;padding:0;color:inherit}
+.wsg-guide .wsg-copy.is-copied{outline:2px solid var(--wsg-ok)}
+
+/* Colours */
+.wsg-swatch{aspect-ratio:4/3;display:block}
+.wsg-has-border .wsg-swatch{box-shadow:inset 0 0 0 1px var(--wsg-border)}
+.wsg-guide .wsg-colour-name{margin:.75rem .75rem 0;font-size:1rem}
+.wsg-values{display:flex;flex-wrap:wrap;gap:.35rem;padding:.75rem}
+.wsg-guide .wsg-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.25rem}
+.wsg-overlay-stage{position:relative;aspect-ratio:2/1}
+.wsg-overlay-panel{position:absolute;inset:22% 10%;border-radius:6px}
+
+/* Logos */
+.wsg-logo-stages{display:grid;grid-template-columns:1fr 1fr}
+.wsg-logo-stage{display:flex;align-items:center;justify-content:center;gap:1rem;min-height:150px;padding:1.25rem;background:#fff}
+.wsg-guide .wsg-logo-stage img{display:block;width:100%;max-width:220px;height:80px;object-fit:contain}
+.wsg-guide .wsg-logo-stage img.wsg-icon-img{max-width:none;border-radius:20%}
+.wsg-site-icon .wsg-logo-stages{grid-template-columns:1fr}
+.wsg-site-icon .wsg-logo-stage{align-items:flex-end}
+.wsg-logo-card figcaption{display:flex;flex-wrap:wrap;gap:.25rem .75rem;align-items:baseline;padding:.75rem 1rem;border-top:1px solid var(--wsg-border)}
+
+/* Fonts */
+.wsg-family{padding:2rem 1.5rem}
+.wsg-guide .wsg-family p{margin:0 0 .75rem}
+.wsg-family-name{font-size:1.75rem;line-height:1.2}
+.wsg-family-big{font-size:clamp(1.75rem,4vw,3rem);line-height:1.15}
+.wsg-family-alpha{font-size:1.25rem;line-height:1.4;overflow-wrap:anywhere}
+.wsg-guide .wsg-family .wsg-family-meta{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;margin:1rem 0 0;font-family:system-ui,sans-serif}
+.wsg-guide .wsg-el{margin:1.75rem 0 0}
+.wsg-guide .wsg-el-meta{margin:.35rem 0 0}
+.wsg-now{font-weight:600;color:var(--wsg-ink)}
+.wsg-scroll{overflow-x:auto}
+.wsg-guide .wsg-table{width:100%;border:0;border-collapse:collapse;font-size:var(--wsg-small)}
+.wsg-guide .wsg-table th,.wsg-guide .wsg-table td{text-align:left;padding:.5rem .6rem;border:0;border-bottom:1px solid var(--wsg-border);vertical-align:top;white-space:nowrap}
+.wsg-guide .wsg-table thead th{color:var(--wsg-muted);font-weight:600}
+
+/* Icons */
+.wsg-guide .wsg-icon{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1rem .5rem;background:var(--wsg-surface);border-radius:var(--wsg-radius);text-align:center}
+.wsg-guide .wsg-icon:hover,.wsg-guide .wsg-icon:focus-visible{background:var(--wsg-surface)}
+.wsg-icon i{font-size:28px;line-height:1;color:var(--wsg-ink)}
+
+/* Forms */
+.wsg-form-stage{max-width:720px}
+
+/* Contrast */
+.wsg-pairings{display:grid;gap:.5rem}
+.wsg-pairing-row{display:grid;grid-template-columns:minmax(180px,240px) 1fr;gap:1rem;align-items:start;padding-block:.5rem;border-bottom:1px solid var(--wsg-border)}
+.wsg-pairing-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.wsg-chip{display:inline-block;padding:.15rem .45rem;border-radius:4px;white-space:nowrap}
+.wsg-pair{display:inline-block;padding:.35rem .6rem;border-radius:6px;font-size:var(--wsg-small);border:1px solid var(--wsg-border)}
+.wsg-pair strong{font-weight:600}
+
+#wsg-toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,1rem);background:#1a1a1a;color:#fff;padding:.5rem 1rem;border-radius:999px;font-size:.875rem;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:100000}
+#wsg-toast.is-visible{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:600px){.wsg-pairing-row{grid-template-columns:1fr;gap:.5rem}.wsg-logo-stages{grid-template-columns:1fr}}

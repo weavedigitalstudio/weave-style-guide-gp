@@ -1,0 +1,20 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build plugin zip
+        run: |
+          mkdir -p build/weave-style-guide-gp
+          rsync -a --exclude .git --exclude .github --exclude build --exclude '*.zip' --exclude .gitignore ./ build/weave-style-guide-gp/
+          cd build && zip -rq ../weave-style-guide-gp.zip weave-style-guide-gp
+      - name: Create release with the zip attached
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" weave-style-guide-gp.zip --title "$GITHUB_REF_NAME" --generate-notes

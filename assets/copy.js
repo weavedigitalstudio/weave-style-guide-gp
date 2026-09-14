@@ -1,0 +1,6 @@
+document.addEventListener( 'click', function ( e ) {
+	var b = e.target.closest( '.wsg-copy' ); if ( ! b || ! navigator.clipboard ) return;
+	navigator.clipboard.writeText( b.dataset.copy ).then( function () { b.classList.add( 'is-copied' ); var t = document.getElementById( 'wsg-toast' ); if ( ! t ) { t = document.createElement( 'div' ); t.id = 'wsg-toast'; t.setAttribute( 'role', 'status' ); document.body.appendChild( t ); } t.textContent = 'Copied ' + ( b.dataset.label || b.dataset.copy.split( '\n' )[ 0 ] ).slice( 0, 60 ); t.classList.add( 'is-visible' ); setTimeout( function () { t.classList.remove( 'is-visible' ); b.classList.remove( 'is-copied' ); }, 1400 ); } );
+} );
+
+(function(){function upd(){document.querySelectorAll('.wsg-now[data-now]').forEach(function(n){var el=n.closest('.wsg-row')?n.closest('.wsg-row').querySelector('.wsg-row-sample'):n.closest('.wsg-el-meta')?n.closest('.wsg-el-meta').previousElementSibling:null;if(!el)return;var px=parseFloat(getComputedStyle(el).fontSize);n.textContent='now '+Math.round(px)+'px';});}var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(upd,120);});if(document.readyState!=='loading')upd();else document.addEventListener('DOMContentLoaded',upd);})();
