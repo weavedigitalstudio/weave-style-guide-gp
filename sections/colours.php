@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 $palette = wsgp_palette();
-if ( ! $palette ) { return '<p class="wsg-note">' . esc_html__( 'No global colours yet. Add them under Appearance > Customize > Colors > Global Colors, named after the job each one does (surface, text, primary and the rest).', 'weave-style-guide-gp' ) . '</p>'; }
+if ( ! $palette ) { return '<p class="wsg-note">' . esc_html__( 'No global colours yet. Add them under Appearance > Customize > Colors > Global Colors, named after the job each one does (surface, text-body, primary and the rest).', 'weave-style-guide-gp' ) . '</p>'; }
 /* translators: %s: value or name being copied */
 $copy = fn( string $value, string $label = '' ) => '<button type="button" class="wsg-copy" data-copy="' . esc_attr( $value ) . '" aria-label="' . esc_attr( sprintf( __( 'Copy %s', 'weave-style-guide-gp' ), $label ?: $value ) ) . '"><code>' . esc_html( $value ) . '</code></button>';
 $css  = ''; $json = array();
