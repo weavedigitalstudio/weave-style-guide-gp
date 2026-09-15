@@ -6,7 +6,7 @@ It's the scaled-down sibling of [weave-style-guide](https://github.com/weavedigi
 
 Sections, in page order: intro, logo, colours, fonts, icons, forms, contrast.
 
-It follows the seventeen Weave colour names: contract 0.2.1 in `weave-blocks/docs/scaffold/boilerplate-tokens.json`, which `weave-playbook/sops/40-design/weave-figma-boilerplate.md` ("Colour names" and "Naming the extras") and build-15 follow (`surface`, `surface-inverse`, `text`, `primary`, `accent` and the rest). A site whose GP palette has at least `surface` and `text` gets colours grouped by job, logos on its `surface` colour and a required pairings check. Live sites keep the slugs they launched with, so older sites without those names get the simpler layout and the plugin works on both.
+It follows the seventeen Weave colour names: contract 0.2.2 in `weave-blocks/docs/scaffold/boilerplate-tokens.json`, which `weave-playbook/sops/40-design/weave-figma-boilerplate.md` ("Colour names" and "Naming the extras") and build-15 follow (`surface`, `surface-inverse`, `text-body`, `primary`, `accent` and the rest). A site whose GP palette has at least `surface` and a body copy colour (`text-body`, or `text` on a site that launched with contract 0.2.1) gets colours grouped by job, logos on its `surface` colour and a required pairings check. Live sites keep the slugs they launched with, so older sites without those names get the simpler layout and the plugin works on both.
 
 ## Install
 

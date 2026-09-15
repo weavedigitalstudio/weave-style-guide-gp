@@ -3,7 +3,7 @@
  * Plugin Name:       Weave Style Guide for GeneratePress
  * Plugin URI:        https://github.com/weavedigitalstudio/weave-style-guide-gp
  * Description:       An auto-generated style guide page for GeneratePress and Beaver Builder sites: Customizer logos, global colours, fonts and typography, the Beaver Builder icon set, forms and contrast, all read from the live site so nothing on the page is typed in.
- * Version:           0.1.2
+ * Version:           0.1.3
  * Requires at least: 6.6
  * Requires PHP:      8.1
  * Author:            Weave Digital Studio
@@ -15,7 +15,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'WSGP_VERSION', '0.1.2' );
+define( 'WSGP_VERSION', '0.1.3' );
 define( 'WSGP_FILE', __FILE__ );
 define( 'WSGP_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WSGP_URL', plugin_dir_url( __FILE__ ) );

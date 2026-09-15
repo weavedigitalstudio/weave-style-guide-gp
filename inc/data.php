@@ -62,8 +62,9 @@ function wsgp_site_background(): array {
 
 /**
  * The seventeen Weave colour names and the job each one does, in order. From the boilerplate token
- * contract 0.2.1 (weave-blocks docs/scaffold/boilerplate-tokens.json), which weave-playbook
+ * contract 0.2.2 (weave-blocks docs/scaffold/boilerplate-tokens.json), which weave-playbook
  * sops/40-design/weave-figma-boilerplate.md follows. New builds put these slugs in the GP palette.
+ * The body copy slug is text-body since 0.2.2; sites that launched on 0.2.1 keep text (see wsgp_body_slug).
  */
 function wsgp_colour_jobs(): array {
 	return array(
@@ -71,7 +72,7 @@ function wsgp_colour_jobs(): array {
 		'surface-subtle'  => __( 'Alternate section band', 'weave-style-guide-gp' ),
 		'surface-raised'  => __( 'Cards and panels', 'weave-style-guide-gp' ),
 		'surface-inverse' => __( 'Dark sections', 'weave-style-guide-gp' ),
-		'text'            => __( 'Body copy', 'weave-style-guide-gp' ),
+		wsgp_body_slug()  => __( 'Body copy', 'weave-style-guide-gp' ),
 		'text-muted'      => __( 'Secondary copy, captions', 'weave-style-guide-gp' ),
 		'text-inverse'    => __( 'Copy on dark', 'weave-style-guide-gp' ),
 		'border'          => __( 'Rules and dividers', 'weave-style-guide-gp' ),
@@ -87,14 +88,20 @@ function wsgp_colour_jobs(): array {
 	);
 }
 
-/** Whether the site's palette follows the Weave colour names: it has at least surface and text. Older sites don't. */
+/** The site's body copy slug: text-body on contract 0.2.2 sites, text on sites that launched with it. */
+function wsgp_body_slug(): string {
+	return '' !== wsgp_colour( 'text-body' ) || '' === wsgp_colour( 'text' ) ? 'text-body' : 'text';
+}
+
+/** Whether the site's palette follows the Weave colour names: it has at least surface and a body copy colour. Older sites don't. */
 function wsgp_uses_colour_names(): bool {
-	return '' !== wsgp_colour( 'surface' ) && '' !== wsgp_colour( 'text' );
+	return '' !== wsgp_colour( 'surface' ) && '' !== wsgp_colour( wsgp_body_slug() );
 }
 
 /** Background and text pairs that must pass for body text, from the boilerplate's Pairings board. */
 function wsgp_pairings(): array {
-	return array( array( 'surface', 'text' ), array( 'surface-subtle', 'text' ), array( 'surface-raised', 'text' ), array( 'surface-inverse', 'text-inverse' ), array( 'primary', 'text-inverse' ), array( 'accent', 'text-inverse' ) );
+	$body = wsgp_body_slug();
+	return array( array( 'surface', $body ), array( 'surface-subtle', $body ), array( 'surface-raised', $body ), array( 'surface-inverse', 'text-inverse' ), array( 'primary', 'text-inverse' ), array( 'accent', 'text-inverse' ) );
 }
 
 /**

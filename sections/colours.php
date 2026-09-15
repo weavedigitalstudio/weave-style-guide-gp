@@ -35,7 +35,7 @@ if ( wsgp_uses_colour_names() ) {
 		if ( in_array( $c['slug'], $starters, true ) ) { $leftover[] = $c['slug']; continue; }
 		$rest .= $card( $c );
 	}
-	$inner .= '<h3 class="wsg-h3">' . esc_html__( 'Colour jobs', 'weave-style-guide-gp' ) . '</h3><p class="wsg-meta">' . esc_html__( 'The seventeen Weave colour names, shared by the Figma file and the build. Use these first and pick by job: surface for backgrounds, text for copy, primary for headings, accent for buttons and links.', 'weave-style-guide-gp' ) . '</p><div class="wsg-grid wsg-grid-colours">' . $named . '</div>';
+	$inner .= '<h3 class="wsg-h3">' . esc_html__( 'Colour jobs', 'weave-style-guide-gp' ) . '</h3><p class="wsg-meta">' . esc_html__( 'The seventeen Weave colour names, shared by the Figma file and the build. Use these first and pick by job: surface for backgrounds, text-body for copy, primary for headings, accent for buttons and links.', 'weave-style-guide-gp' ) . '</p><div class="wsg-grid wsg-grid-colours">' . $named . '</div>';
 	if ( $rest ) { $inner .= '<h3 class="wsg-h3">' . esc_html__( 'Other colours', 'weave-style-guide-gp' ) . '</h3><p class="wsg-meta">' . esc_html__( 'Extra colours the layouts use, each named for the job it does. The brand\'s own name for a swatch is the label on the card.', 'weave-style-guide-gp' ) . '</p><div class="wsg-grid wsg-grid-colours">' . $rest . '</div>'; }
 	if ( $leftover ) {
 		$uses  = wsgp_colour_setting_uses();
