@@ -65,6 +65,7 @@ function wsgp_site_background(): array {
  * contract 0.2.2 (weave-blocks docs/scaffold/boilerplate-tokens.json), which weave-playbook
  * sops/40-design/weave-figma-boilerplate.md follows. New builds put these slugs in the GP palette.
  * The body copy slug is text-body since 0.2.2; sites that launched on 0.2.1 keep text (see wsgp_body_slug).
+ * The rules-and-dividers slug is border-default since 0.2.3; sites that launched earlier keep border (see wsgp_border_slug).
  */
 function wsgp_colour_jobs(): array {
 	return array(
@@ -75,7 +76,7 @@ function wsgp_colour_jobs(): array {
 		wsgp_body_slug()  => __( 'Body copy', 'weave-style-guide-gp' ),
 		'text-muted'      => __( 'Secondary copy, captions', 'weave-style-guide-gp' ),
 		'text-inverse'    => __( 'Copy on dark', 'weave-style-guide-gp' ),
-		'border'          => __( 'Rules and dividers', 'weave-style-guide-gp' ),
+		wsgp_border_slug() => __( 'Rules and dividers', 'weave-style-guide-gp' ),
 		'primary'         => __( 'Brand colour, headings', 'weave-style-guide-gp' ),
 		'primary-strong'  => __( 'Primary hover and pressed', 'weave-style-guide-gp' ),
 		'accent'          => __( 'Buttons, links, highlights', 'weave-style-guide-gp' ),
@@ -91,6 +92,11 @@ function wsgp_colour_jobs(): array {
 /** The site's body copy slug: text-body on contract 0.2.2 sites, text on sites that launched with it. */
 function wsgp_body_slug(): string {
 	return '' !== wsgp_colour( 'text-body' ) || '' === wsgp_colour( 'text' ) ? 'text-body' : 'text';
+}
+
+/** The site's rules-and-dividers slug: border-default on contract 0.2.3 sites, border on sites that launched with it. */
+function wsgp_border_slug(): string {
+	return '' !== wsgp_colour( 'border-default' ) || '' === wsgp_colour( 'border' ) ? 'border-default' : 'border';
 }
 
 /** Whether the site's palette follows the Weave colour names: it has at least surface and a body copy colour. Older sites don't. */
